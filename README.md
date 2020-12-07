@@ -13,3 +13,5 @@ Start the project
 ```shell
 $ docker-compose up
 ```
+
+Visit `localhost:8000` to see the result.
