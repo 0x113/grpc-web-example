@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>gRPC-WEB Dashboard</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+
+    <p id="title">Dashboard stats</p>
+    <div id="dashboard">
+      <div id="dashboard-widget">
+        <p>Successful: {{ completed_jobs }}</p>
+        <p>Running: {{ running_jobs }}</p>
+        <p>Failed: {{ failed_jobs }}</p>
+        <p>Skipped: {{ skipped_jobs }}</p>
+        <p>Partial: {{ partial_jobs }}</p>
+        <canvas id="dashboard-chart"></canvas>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="dist/main.js"></script>
+  </body>
+</html>

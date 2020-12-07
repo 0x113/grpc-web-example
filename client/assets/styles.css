@@ -1,0 +1,23 @@
+body {
+  background-color: #F2F5FA;
+}
+
+#dashboard {
+  margin: 0 auto;
+  text-align: center;
+  width: 25%;
+}
+
+#title {
+  text-align: center;
+  font-size: 42px;
+}
+
+#dashboard-widget {
+  text-align: left;
+  color: #fff;
+  padding: 60px 40px;
+  background-color: #222;
+  border-radius: 20px;
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .2);
+}

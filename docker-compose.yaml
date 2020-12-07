@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  envoy:
+    build: ./envoy
+    container_name: envoy-proxy
+    ports:
+      - 8080:8080
+    links:
+      - dashboard-service
+
+  dashboard-service:
+    build: ./server
+    container_name: dashboard-service
+    ports:
+      - 9090:9090
+
+  client:
+    image: nginx:stable-alpine
+    ports:
+      - 8000:80
+    volumes:
+        - ./client:/usr/share/nginx/html

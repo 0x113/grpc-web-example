@@ -1,0 +1,18 @@
+syntax = "proto3";
+package pb;
+
+option go_package = ".;pb";
+
+message DashboardRequest {}
+
+message DashboardResponse {
+	int64 completed = 1;
+	int64 running = 2;
+	int64 failed = 3;
+	int64 skipped = 4;
+	int64 partial = 5;
+}
+
+service DashboardService {
+	rpc DashboardStats(DashboardRequest) returns (stream DashboardResponse) {}
+}
