@@ -1,16 +1,17 @@
 import { DashboardServiceClient } from './pb/dashboard_grpc_web_pb';
 import { DashboardRequest } from './pb/dashboard_pb';
+//var grpc = require('grpc')
 
 var app = new Vue({
   el: '#dashboard',
   data: {
-    message: 'Hello Vue!',
     failed_jobs: 0,
     running_jobs: 0,
     completed_jobs: 0,
     partial_jobs: 0,
     skipped_jobs: 0,
     stream: null,
+    metadata: null,
     dashboard_chart: null,
   },
   mounted() {
@@ -26,10 +27,16 @@ var app = new Vue({
       var dashboardRequest = new DashboardRequest()
       var stream = client.dashboardStats(dashboardRequest, {})
       this.stream = stream
+
+      /*
+      var metadata = new grpc.Metadata();
+      metadata.add('authorization', 'secret')
+      this.metadata = metadata
+      */
     },
 
     getDashboard: function() {
-      this.message = "test"
+      // this.stream.on("data", this.metadata, (res) => {
       this.stream.on("data", (res) => {
         this.completed_jobs = res.getCompleted()
         this.running_jobs = res.getRunning()

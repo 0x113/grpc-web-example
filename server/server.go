@@ -27,6 +27,23 @@ func randomNum() int64 {
 
 func (s *server) DashboardStats(req *pb.DashboardRequest, stream pb.DashboardService_DashboardStatsServer) error {
 	log.Infoln("Serving dashboard stats...")
+	/*
+		md, exists := metadata.FromIncomingContext(stream.Context())
+		if !exists {
+			log.Error("Failed to get metadata from the gRPC stream; metadata does not exist")
+			return fmt.Errorf("There's not metadata in the gRPC stream")
+		}
+
+		authToken, exists := md["authorization"]
+		if !exists {
+			log.Error("No authorization has been sent.")
+			return fmt.Errorf("No authorization has been sent")
+		}
+
+		// Validate the token
+		log.Info(authToken)
+	*/
+
 	var err error
 	for {
 		res := &pb.DashboardResponse{

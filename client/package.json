@@ -1,4 +1,11 @@
 {
+ "browser": {
+  "child_process": false
+ },
+ "node": {
+  "child_process": "empty",
+  "fs": "empty"
+ },
  "name": "grpc-web-example",
  "version": "0.1.0",
  "description": "gRPC-Web Dashboard example",
