@@ -1,12 +1,9 @@
-## Setup
-Setup frontend
-```shell
-$ cd client && npm install && npx webpack client.js && cd ..
-```
+## gRPC-Web Example
+A simple dashboard that refreshes every time it receives data from a gRPC stream.
 
 Start the project
 ```shell
-$ docker-compose up
+$ make
 ```
 
-Visit `localhost:8000` to see the result.
+Visit `localhost:8000` to see the dashboard refreshes based on the data received from a gRPC stream.
